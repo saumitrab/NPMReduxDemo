@@ -1,5 +1,6 @@
 import { createStore } from 'redux'
 
+// reducer function
 const counter = (state = 0, action) => {
   switch(action.type) {
     case 'INCREMENT': 
