@@ -11,14 +11,17 @@ const counter = (state = 0, action) => {
   }
 }
 
-//const { createStore } = Redux;
-
 const store = createStore(counter);
 
-// Call anytime an action has been dispatched
-store.subscribe( () => {
+const render = () => {
   document.body.innerText = store.getState();
-});
+}
+
+// Call anytime an action has been dispatched
+store.subscribe(render);
+
+// Call initial state
+render();
 
 document.addEventListener('click', () => {
   // notice the call to dispatch, not counter
